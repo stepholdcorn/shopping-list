@@ -6,9 +6,6 @@ $(document).ready(function() {
     $(this).remove();
   });
 
-  $('li em').addClass('seasonal');
-  $('li.hot').addClass('favorite');
-
   $(function() {
     $('li:contains("pine")').text('almonds');
     $('li.hot').html(function() {
@@ -21,6 +18,12 @@ $(document).ready(function() {
     $('li.hot').prepend('+ ');
     var $newListItem = $('<li><em>gluten-free</em> soy sauce</li>');
     $('li:last').after($newListItem);
+  });
+
+  $(function() {
+    $('li#three').removeClass('hot');
+    $('li.hot').addClass('favorite');
+    $('ul').attr('id', 'group');
   });
 
 });
