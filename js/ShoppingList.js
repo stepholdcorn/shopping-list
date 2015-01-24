@@ -8,7 +8,14 @@ $(document).ready(function() {
 
   $('li em').addClass('seasonal');
   $('li.hot').addClass('favorite');
-  $('li[id!="one"]').hide().delay(500).fadeIn(1400);
+
+  $(function() {
+    $('li:contains("pine")').text('almonds');
+    $('li.hot').html(function() {
+      return '<em>' + $(this).text() + '</em>';
+    });
+    $('li#one').remove();
+  });
 
 });
 
