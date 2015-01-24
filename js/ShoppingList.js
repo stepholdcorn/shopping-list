@@ -1,14 +1,9 @@
 $(document).ready(function() {
 
-$(function() {
-  var backgroundColor = $('li').css('background-color');
-    $('ul').append('<p>Color was: ' + backgroundColor + '</p>');
-    $('li').css({
-      'background-color': '#c5a996',
-      'border': '1px solid #fff',
-      'color': '#000',
-      'font-family': 'Georgia',
-      'padding-left': '+=75'
+  $(function() {
+    $('li').each(function() {
+      var ids = this.id;
+      $(this).append(' <span class="order">' + ids + '</span>');
     });
   });
 
