@@ -6,5 +6,8 @@ $(document).ready(function() {
     $(this).remove();
   });
 
+  $('li em').addClass('seasonal');
+  $('li.hot').addClass('favorite');
+
 });
 
