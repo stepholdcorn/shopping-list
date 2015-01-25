@@ -1,12 +1,15 @@
 $(document).ready(function() {
 
-  $('li').on('click', function() {
-    $(this).animate({
-      opacity: 0.0,
-      paddingLeft: '+=80'
-    }, 500, function() {
-      $(this).remove();
-    });
+  var $h2 = $('h2');
+  $('ul').hide();
+  $h2.append('<a class="show">show</a>');
+
+  $h2.on('click', function() {
+    $h2.next()
+      .fadeIn(500)
+      .children('.hot')
+      .addClass('complete');
+    $h2.find('a').fadeOut();
   });
 
 });
