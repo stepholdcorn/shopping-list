@@ -1,12 +1,20 @@
 $(document).ready(function() {
 
-  $('li').on('click', function(e) {
-    $('li span').remove();
-    var date = new Date();
-    date.setTime(e.timeStamp);
-    var clicked = date.toDateString();
-    $(this).append('<span class="date">' + clicked + ' ' + e.type + '</span>');
-  });
+  var listItem, itemStatus, eventType;
+
+  $('ul').on(
+    'click mouseover',
+    ':not(#four)',
+    {status: 'important'},
+    function(e) {
+      listItem = 'Item: ' + e.target.textContent + '<br />';
+      itemStatus = 'Status: ' + e.data.status + '<br />';
+      eventType = 'Event: ' + e.type;
+      $('#notes').html(listItem + itemStatus + eventType);
+    }
+  );
 
 });
+
+
 
